@@ -19,7 +19,7 @@ contract Blog {
 
     /**
      * Mappings can be seen as hash tables
-     * Here we create lookups for posts by id and posts by ipfs hash
+     * Here we create lookups for post by id and post by ipfs hash
      */
     mapping(uint => Post) private idToPost;
     mapping(string => Post) private hashToPost;
@@ -76,7 +76,7 @@ contract Blog {
         emit PostUpdated(post.id, title, hash, published);
     }
 
-    /* Fetches all posts */
+    /* Fetches all post */
     function fetchPosts() public view returns (Post[] memory) {
         uint itemCount = _postIds.current();
         uint currentIndex = 0;
